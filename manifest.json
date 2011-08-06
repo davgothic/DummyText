@@ -1,0 +1,9 @@
+{
+  "name": "DummyText",
+  "version": "1.1",
+  "description": "Generates random dummy text (Lorem Ipsum).",
+  "browser_action": {
+    "default_icon": "media/images/icon.png",
+    "popup": "popup.html"
+  }
+}

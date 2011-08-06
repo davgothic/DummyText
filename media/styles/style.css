@@ -1,0 +1,68 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #444;
+	font: 12px/20px Arial, sans-serif;
+	height: auto;
+	margin: 10px;
+	overflow: hidden;
+	width: 480px;
+}
+
+label {
+	display: inline-block;
+	padding: 5px 0;
+}
+
+.words {
+	width: 180px;
+}
+
+.paragraphs {
+	width: 130px;
+}
+
+.ptags {
+	width: 160px;
+}
+
+#paragraphs, #words {
+	border: none;
+	border-bottom: 1px dotted #aaa;
+	color: #444;
+	outline: none;
+	padding: 2px;
+	text-align: center;
+	width: 30px;
+}
+
+#copy {
+	border: 1px solid #ccc;
+	color: #444;
+	cursor: pointer;
+	padding: 5px 0;
+	width: 480px;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+#copy:hover {
+	border: 1px solid #aaa;
+	color: #222;
+}
+
+#lipsum {
+	background: #fafafa;
+	border: none;
+	border-radius: 5px;
+	color: #444;
+	height: 300px;
+	margin-top: 10px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 10px;
+	resize: none;
+	width: 460px;
+}
