@@ -15,6 +15,12 @@ lipsum =
 		document.getElementById("copy").onclick = ->
 			document.getElementById("lipsum").select()
 			document.execCommand("Copy")
+			document.getElementById("copy").value = "Copied!"
+			document.getElementById("copy").disabled = "disabled"
+			copyCallback = ->
+				document.getElementById("copy").value = "Copy to clipboard"
+				document.getElementById("copy").disabled = false
+			setTimeout copyCallback, 1000
 
 		document.getElementById("paragraphs").value = @numParagraphs
 		document.getElementById("paragraphs").onkeyup = =>

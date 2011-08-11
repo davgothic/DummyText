@@ -40,23 +40,40 @@ label {
 }
 
 #copy {
-	border: 1px solid #ccc;
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border: 1px solid #aaa;
 	color: #444;
-	cursor: pointer;
-	padding: 5px 0;
+	margin-bottom: 0;
+	padding: 3px 12px 3px 12px;
 	width: 480px;
-	text-shadow: 1px 1px 0 #fff;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-user-select: none;
 }
 
 #copy:hover {
-	border: 1px solid #aaa;
+	background: #ebebeb -webkit-linear-gradient(#fefefe, #f8f8f8 40%, #e9e9e9);
+	border-color: #999;
 	color: #222;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#copy:active {
+	background: #ebebeb -webkit-linear-gradient(#f4f4f4, #efefef 40%, #dcdcdc);
+	color: #333;
+	-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#copy[disabled] {
+	background: -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
+	border-color: #aaa;
+	color: #888;
+	-webkit-box-shadow: none;
 }
 
 #lipsum {
 	background: #fafafa;
 	border: none;
-	border-radius: 5px;
 	color: #444;
 	height: 300px;
 	margin-top: 10px;
@@ -65,4 +82,5 @@ label {
 	padding: 10px;
 	resize: none;
 	width: 460px;
+	-webkit-border-radius: 5px;
 }

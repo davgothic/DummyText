@@ -9,8 +9,16 @@
     punctuation: ["!", "?", "."],
     init: function() {
       document.getElementById("copy").onclick = function() {
+        var copyCallback;
         document.getElementById("lipsum").select();
-        return document.execCommand("Copy");
+        document.execCommand("Copy");
+        document.getElementById("copy").value = "Copied!";
+        document.getElementById("copy").disabled = "disabled";
+        copyCallback = function() {
+          document.getElementById("copy").value = "Copy to clipboard";
+          return document.getElementById("copy").disabled = false;
+        };
+        return setTimeout(copyCallback, 1000);
       };
       document.getElementById("paragraphs").value = this.numParagraphs;
       document.getElementById("paragraphs").onkeyup = __bind(function() {
