@@ -1,6 +1,7 @@
 {
   "name": "DummyText",
-  "version": "1.3",
+  "version": "1.4",
+  "manifest_version": 2,
   "description": "Generates random dummy text (Lorem Ipsum).",
   "icons": {
     "128": "media/images/icon128.png",
@@ -9,6 +10,6 @@
    },
   "browser_action": {
     "default_icon": "media/images/icon19.png",
-    "popup": "popup.html"
+    "default_popup": "popup.html"
   }
 }
