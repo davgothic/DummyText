@@ -18,16 +18,20 @@ label {
 	padding: 5px 0;
 }
 
-.words {
-	width: 180px;
+.paragraphs {
+	width: 105px;
 }
 
-.paragraphs {
-	width: 130px;
+.words {
+	width: 160px;
 }
 
 .ptags {
-	width: 160px;
+	width: 130px;
+}
+
+.acopy {
+	width: 70px;
 }
 
 #paragraphs, #words {
