@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DummyText Options</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DummyText Options</h1>
+    </header>
+
+    <div class="option-field">
+      <label class="checkbox-container">
+        <input type="checkbox" id="enable-autocopy-checkbox" />
+        <span class="checkmark"></span>
+        Enable auto-copy?
+      </label>
+    </div>
+
+    <div class="option-field">
+      <label>
+        Auto-copy delay (milliseconds)
+        <input type="number" id="autocopy-delay-input" min="0" max="2000" step="50" />
+      </label>
+    </div>
+
+    <div class="option-field">
+      <label>
+        Theme
+        <select id="theme-select">
+          <option value="auto">Auto</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </label>
+    </div>
+
+    <script src="./options.js" type="module"></script>
+  </body>
+</html>

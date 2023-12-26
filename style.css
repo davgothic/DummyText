@@ -1,0 +1,257 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px/20px Arial, sans-serif;
+  height: auto;
+  margin: 10px;
+  overflow: hidden;
+  width: 480px;
+  user-select: none;
+}
+
+label {
+  display: inline-block;
+  padding: 5px 0;
+}
+
+input, select, textarea {
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.paragraphs-label {
+  width: 150px;
+}
+
+.words-label {
+  width: 200px;
+}
+
+.add-tags-label {
+  width: 120px;
+}
+
+#paragraphs-input, #words-input {
+  text-align: center;
+  width: 40px;
+}
+
+#copy-button {
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 5px;
+  margin-bottom: 0;
+  padding: 5px 12px;
+  width: 480px;
+}
+
+#copy-button[disabled] {
+  box-shadow: none;
+}
+
+#lipsum-textarea {
+  border: none;
+  height: 300px;
+  margin-top: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  resize: none;
+  width: 460px;
+  border-radius: 5px;
+}
+
+#autocopy-delay {
+  width: 50px
+}
+
+.checkbox-container {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0px;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(var(--control-background-rgb));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  border-color: transparent;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 3px;
+  height: 8px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg) skew(0deg, 8deg);
+}
+
+.option-field {
+  min-height: 30px;
+  display: block;
+}
+
+
+/* --- Theme --- */
+
+:root {
+  --black-rgb: 20 21 25;
+  --white-rgb: 235 235 235;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+      --background-rgb: var(--white-rgb);
+      --background-inverse-rgb: var(--black-rgb);
+      --control-background-rgb: var(--black-rgb) / 10%;
+      --text-rgb: var(--black-rgb) / 80%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+      --background-rgb: var(--black-rgb);
+      --background-inverse-rgb: var(--white-rgb);
+      --control-background-rgb: var(--white-rgb) / 10%;
+      --text-rgb: var(--white-rgb) / 80%;
+  }
+}
+
+:root.theme-light {
+  --background-rgb: var(--white-rgb);
+  --background-inverse-rgb: var(--black-rgb);
+  --control-background-rgb: var(--black-rgb) / 10%;
+  --text-rgb: var(--black-rgb) / 80%;
+}
+
+:root.theme-dark {
+  --background-rgb: var(--black-rgb);
+  --background-inverse-rgb: var(--white-rgb);
+  --control-background-rgb: var(--white-rgb) / 10%;
+  --text-rgb: var(--white-rgb) / 80%;
+}
+
+input, select, textarea {
+  background-color: rgb(var(--control-background-rgb));
+  color: rgb(var(--text-rgb));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:hover, select:hover, textarea:hover {
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: rgb(var(--background-inverse-rgb) / 80%) solid 1px;
+}
+
+body {
+  background-color: rgb(var(--background-rgb));
+  color: rgb(var(--text-rgb));
+}
+
+#paragraphs-input, #words-input {
+  border-bottom-color: rgb(var(--background-inverse-rgb) / 20%);
+}
+
+#copy-button {
+  background-color: rgb(var(--background-inverse-rgb) / 15%);
+  border-color: rgb(var(--background-inverse-rgb) / 20%);
+  color: rgb(var(--text-rgb));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#copy-button:hover {
+  background-color: rgb(var(--background-inverse-rgb) / 10%);
+  border-color: rgb(var(--background-inverse-rgb) / 15%);
+  color: rgb(var(--text-rgb));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#copy-button:active {
+  background-color: rgb(var(--background-inverse-rgb) / 5%);
+  border-color: rgb(var(--background-inverse-rgb) / 10%);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#copy-button[disabled] {
+  background-color: rgb(var(--background-inverse-rgb) / 5%);
+  border-color: rgb(var(--background-inverse-rgb) / 10%);
+  color: #888;
+  box-shadow: none;
+}
+
+input:invalid {
+  border-bottom: 1px dotted red !important;
+}
+
+.checkmark {
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(var(--control-background-rgb));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-color: rgb(var(--background-inverse-rgb) / 10%);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-color: rgb(var(--background-inverse-rgb) / 20%);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  border-color: transparent;
+}
+
+.checkbox-container input:focus ~ .checkmark {
+  outline: rgb(var(--background-inverse-rgb) / 80%) solid 1px;
+}
+
+.checkbox-container .checkmark:after {
+  border-color: rgb(var(--text-rgb));
+}
