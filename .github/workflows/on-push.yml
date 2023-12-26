@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  chrome-extension-upload:
+    name: Chrome Extension Upload
+    uses: ./.github/workflows/run-chrome-extension-upload.yml
+    secrets: inherit

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>DummmyText</title>
-	<link rel="stylesheet" href="media/styles/style.css" />
+  <meta charset="utf-8" />
+  <title>DummmyText</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-	<div id="controls">
-		<label class="paragraphs">Paragraphs: <input type="text" value="3" name="paragraphs" id="paragraphs" maxlength="2" /></label>
-		<label class="words">Words Per Paragraph: <input type="text" value="100" name="words" id="words" maxlength="3" /></label>
-		<label class="ptags"><input type="checkbox" value="yes" name="ptags" id="ptags" /> Add paragraph tags</label>
-	</div>
-	<input type="button" value="Copy to clipboard" id="copy" />
-	<textarea id="lipsum"></textarea>
-	<script src="media/scripts/lipsum.js"></script>
+  <div id="controls">
+    <label class="paragraphs-label">
+      <input type="number" value="3" id="paragraphs-input" required min="1" max="99" minlength="1" maxlength="2" />
+      paragraphs
+    </label>
+    <label class="words-label">
+      <input type="number" value="100" id="words-input" min="1" required max="999" minlength="1" maxlength="3" />
+      words per paragraph
+    </label>
+    <label class="checkbox-container add-tags-label">
+      <input type="checkbox" id="add-tags-checkbox" />
+      <span class="checkmark"></span>
+      add tags?
+    </label>
+  </div>
+  <input type="button" value="Copy" id="copy-button" />
+  <textarea id="lipsum-textarea" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+  <script src="./popup.js" type="module"></script>
 </body>
 </html>

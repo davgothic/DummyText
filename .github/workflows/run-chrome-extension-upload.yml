@@ -1,0 +1,46 @@
+name: Chrome Extension Upload
+
+on:
+  workflow_call:
+    secrets:
+      EXTENSION_ID:
+        required: true
+      CLIENT_ID:
+        required: true
+      CLIENT_SECRET:
+        required: true
+      REFRESH_TOKEN:
+        required: true
+
+jobs:
+  upload:
+    if: ${{ github.repository_owner == 'davgothic' }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+    - name: Setup Node.js
+      uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build extension
+      run: npm run build
+
+    - name: Compress dist directory
+      run: zip -r extension.zip dist
+
+    - name: Upload Extension
+      uses: mnao305/chrome-extension-upload@224d037fac1b07a5f31c7aadb48e8ee061a2c568 # v4.0.1
+      with:
+        file-path: extension.zip
+        extension-id: ${{ secrets.EXTENSION_ID }}
+        client-id: ${{ secrets.CLIENT_ID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        refresh-token: ${{ secrets.REFRESH_TOKEN }}
+        publish: false

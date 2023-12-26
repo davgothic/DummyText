@@ -1,0 +1,39 @@
+{
+  "name": "dummy-text",
+  "version": "2.0.0",
+  "description": "A Google Chrome Extension for generating random dummy text",
+  "main": "lipsum.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davgothic/DummyText.git"
+  },
+  "keywords": [
+    "dummy-text",
+    "lorem-ipsum",
+    "lipsum",
+    "placeholder"
+  ],
+  "author": "David Hancock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davgothic/DummyText/issues"
+  },
+  "homepage": "https://github.com/davgothic/DummyText#readme",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^1.0.14",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "vite": "^2.9.16"
+  }
+}
